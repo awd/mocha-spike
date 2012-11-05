@@ -3,7 +3,10 @@
   "description": "make mocha do work",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
     "mocha": "1.6.0"
   }
 }
