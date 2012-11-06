@@ -1,11 +1,11 @@
-# TESTS = $(shell find test -name "*_spec.js")
-
 # test:
 # 	@./node_modules/.bin/mocha $(TESTS)
 
 # .PHONY: test
 
+TESTS = $(shell find test -name "*.html")
+
 test:
-	@./node_modules/.bin/mocha -u bdd --compilers coffee:coffee-script -R spec
+  @./node_modules/.bin/mocha-phantomjs $(TESTS)
 
 .PHONY: test
