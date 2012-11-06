@@ -11,11 +11,6 @@
     });
     return describe('Real instance', function() {
       return describe('#realMethod', function() {
-        it('should exist', function() {
-          var adam2;
-          adam2 = new Adam2;
-          return expect(adam2).to.be.a(Adam2);
-        });
         return it('should return a string', function() {
           var adam2;
           adam2 = new Adam2();

@@ -6,10 +6,6 @@ describe 'Adam2', ->
 
   describe 'Real instance', ->
     describe '#realMethod', ->
-      it 'should exist', ->
-        adam2 = new Adam2
-        expect(adam2).to.be.a(Adam2)
-
       it 'should return a string', ->
         adam2 = new Adam2();
 
