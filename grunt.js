@@ -39,7 +39,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', 'coffee mocha');
 
   // Default task.
-  grunt.registerTask('default', 'mocha');
+  grunt.registerTask('default', 'coffee mocha');
 
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-coffee');
