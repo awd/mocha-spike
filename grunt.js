@@ -14,47 +14,33 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    coffee: {
+      app: {
+        src: ['source/coffee/*.coffee'],
+        dest: 'source/js'
+      },
+      test: {
+        src: ['test/coffee/*.coffee'],
+        dest: 'test/js'
+      }
+    },
     mocha: {
-        // runs all html files (except test2.html) in the test dir
-        // In this example, there's only one, but you can add as many as
-        // you want. You can split them up into different groups here
-        // ex: admin: [ 'test/admin.html' ]
-        all: {
-          src: [ 'test/**/!(test2).html' ],
-          mocha: {
-              ignoreLeaks: false,
-              grep: 'food'
-          },
-          run: true
+      all: {
+        src: [ 'test/**/**.html' ],
+        mocha: {
+          ignoreLeaks: false
         },
-
-        // Runs 'test/test2.html' with specified mocha options.
-        // This variant auto-includes 'mocha-helper.js' so you do not have
-        // to include it in your HTML spec file. Instead, you must add an
-        // environment check before you run `mocha.run` in your HTML.
-        // test2: {
-
-        //     // Test files
-        //     src: [ 'test/test2.html' ],
-
-        //     // mocha options
-        //     mocha: {
-        //         ignoreLeaks: false,
-        //         grep: 'food'
-        //     },
-
-        //     // Indicates whether 'mocha.run()' should be executed in
-        //     // 'mocha-helper.js'
-        //     run: true
-        // }
+        run: true
+      }
     }
   });
 
   // Alias 'test' to 'mocha' so you can run `grunt test`
-  grunt.registerTask('test', 'mocha');
+  grunt.registerTask('test', 'coffee mocha');
 
   // Default task.
   grunt.registerTask('default', 'mocha');
 
   grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-coffee');
 };
